@@ -11,7 +11,7 @@
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/facilities.jpg');
             background-size: cover;
             background-position: center;
-            height: 350px;
+            height: 300px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -61,7 +61,7 @@
         }
 
         .facility-description {
-            background-color: #4a4a4a;
+            background-color: #36454F;
             color: white;
             padding: 1.5rem;
             border-radius: 8px;
@@ -112,11 +112,13 @@
     </style>
 </head>
 <body>
-    <?php include "components/nav.php";
+    <?php 
+        include "components/nav.php";
     ?>
-
+    <br>
+    <br>
     <div class="hero-section">
-        <h1>Fasilitas Prime Fit</h1>
+        <h1><b>Fasilitas Prime Fit</b></h1>
     </div>
 
     <div class="container">
@@ -199,49 +201,9 @@
         </section>
     </div>
 
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <img src="/api/placeholder/30/30" alt="Logo">
-                    <div class="contact-info">
-                        <p>Jam Operasional<br>Senin-Minggu / 24 jam</p>
-                        <p>Layanan Konsumen<br>021.2345.6789</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <h5>Tentang kami</h5>
-                    <ul>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Location</a></li>
-                        <li><a href="#">Blog</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <h5>Kelas</h5>
-                    <ul>
-                        <li><a href="#">Pilates</a></li>
-                        <li><a href="#">VR Class</a></li>
-                        <li><a href="#">Mind & Body</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <h5>Layanan</h5>
-                    <ul>
-                        <li><a href="#">Class</a></li>
-                        <li><a href="#">Membership</a></li>
-                    </ul>
-                    <h5 class="mt-4">Ikuti kami di social media</h5>
-                    <div class="social-icons">
-                        <a href="#" class="me-2">FB</a>
-                        <a href="#" class="me-2">IG</a>
-                        <a href="#" class="me-2">TW</a>
-                        <a href="#">YT</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    //  Footer
+    <?php include "components/footer.php";
+    ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

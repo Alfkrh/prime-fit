@@ -16,10 +16,6 @@
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
 
-        .navbar {
-            background-color: var(--primary-orange) !important;
-            padding: 15px 0;
-        }
 
         .join-now-btn {
             background-color: #36454F;
@@ -111,7 +107,8 @@
     </style>
 </head>
 <body>
-    <?php include "components/nav.php";
+    <?php 
+        include "components/nav.php";
     ?>
 <br>
 <br>
@@ -122,6 +119,7 @@
         </div>
     </section>
 
+    <!--GX Class-->
     <section class="class-section">
         <div class="container">
             <h2 class="mb-4">GX Class</h2>
@@ -148,7 +146,7 @@
         </div>
     </section>
 
-    <!-- Mind & Body Section -->
+    <!-- Mind & Body -->
     <section class="class-section">
         <div class="container">
             <h2 class="mb-4">Mind & Body</h2>
@@ -175,7 +173,7 @@
         </div>
     </section>
 
-    <!-- GX Class Section 2 -->
+    <!-- Pilates+ -->
     <section class="class-section">
         <div class="container">
             <h2 class="mb-4">Pilates+</h2>
@@ -205,7 +203,7 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <h2 class="mb-3">Siap Jadi Versi Terbaik Dirimu?</h2>
+            <h2 class="mb-3"><b>Siap Jadi Versi Terbaik Dirimu?</b></h2>
             <p class="mb-4">Yuk, mulai perjalanan sehatmu bersama Prime Fit dan rasakan perubahannya!</p>
             <button class="orange-btn">Gabung Sekarang</button>
         </div>

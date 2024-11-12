@@ -45,8 +45,8 @@
                 <div class="col-md-3">
                     <h5>Layanan</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="text-white">Class</a></li>
-                        <li><a href="#" class="text-white">Membership</a></li>
+                        <li><a href="class.php" class="text-white">Class</a></li>
+                        <li><a href="membership.php" class="text-white">Membership</a></li>
                     </ul>
                     <h5 class="mt-4">Ikuti kami di sosial media</h5>
                     <div class="social-icons">

@@ -1,391 +1,237 @@
+<?php if (isset($errors) && !empty($errors)): ?>
+    <div class="alert alert-danger">
+        <ul>
+            <?php foreach ($errors as $error): ?>
+                <li><?php echo $error; ?></li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+<?php endif; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gym Registration Form</title>
+    <title>Create Your Profile - Gym Registration</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            min-height: 100vh;
-            background: #f5f5f5;
-        }
-
         .back-button {
-            position: fixed;
-            top: 0;
-            left: 0;
-            background: #FF5722;
-            border: none;
-            padding: 15px;
-            cursor: pointer;
-            z-index: 100;
-        }
-
-        .back-button img {
-            width: 24px;
-            height: 24px;
-            filter: invert(1);
-        }
-
-        .container {
-            display: flex;
-            width: 100%;
-            min-height: 100vh;
-        }
-
-        .image-section {
-            flex: 0 0 40%;
-            position: relative;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-                        url('images/registration_thumbnail.png');
-            background-size: cover;
-            background-position: center;
-            top: 0;
-        }
-
-        .form-section {
-            flex: 0 0 60%;
-            padding: 40px 60px;
-            background: white;
-            overflow-y: auto;
-        }
-
-        .progress-steps {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-
-        .step {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .step-number {
-            width: 24px;
-            height: 24px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #f8f9fa;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
-            background: #FF5722;
-            color: white;
-            font-size: 14px;
+            border: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .hero-image {
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .price {
+            color: #ff5722;
+            font-weight: bold;
+            float: right;
+        }
+        
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .add-ons {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
         }
 
-        .step.inactive .step-number {
-            background: #ccc;
+        /* Style untuk input date */
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            opacity: 1;
+        }
+        
+        input[type="date"]::-webkit-inner-spin-button {
+            display: none;
+        }
+        
+        /* Style untuk placeholder pada input date */
+        input[type="text"].date-input:not(:focus):before {
+            content: attr(placeholder);
+            position: absolute;
+            color: #6c757d;
         }
 
-        .step-text {
-            font-weight: 500;
-            color: #333;
+        .submit-btn {
+            background-color: #ff5722 !important;
+            border: none;
         }
 
-        h1 {
-            color: #2F4858;
-            margin-bottom: 30px;
-            font-size: 28px;
-            font-weight: 600;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        input:not([type="checkbox"]), 
-        select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            margin-bottom: 15px;
-            font-size: 14px;
-        }
-
-        .phone-input {
-            display: flex;
-            gap: 10px;
-        }
-
-        .phone-input select {
-            width: 100px;
-        }
-
-        .plan-section {
-            margin-top: 40px;
+        .submit-btn:hover {
+            background-color: #f4511e !important;
         }
 
         .plan-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .plan-name {
-            font-size: 18px;
-            font-weight: 500;
-            color: #2F4858;
-        }
-
-        .plan-price {
-            color: #FF5722;
-            font-weight: bold;
-        }
-
-        .plan-description {
-            color: #666;
-            font-size: 13px;
-            margin-bottom: 20px;
-        }
-
-        .add-ons {
-            background: #f5f5f5;
-            padding: 20px;
-            border-radius: 4px;
-            margin: 20px 0;
-        }
-
-        .add-ons h3 {
-            color: #2F4858;
-            margin-bottom: 15px;
-        }
-
-        .add-on-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 12px;
-        }
-
-        .date-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin: 20px 0;
-        }
-
-        .date-field label {
-            display: block;
-            margin-bottom: 5px;
-            color: #666;
-            font-size: 14px;
-        }
-
-        .checkbox-group {
-            margin: 30px 0;
-        }
-
-        .checkbox-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            margin-bottom: 12px;
-        }
-
-        .checkbox-item input[type="checkbox"] {
-            margin-top: 3px;
-        }
-
-        .checkbox-item label {
-            font-size: 14px;
-            color: #333;
-        }
-
-        .payment-summary {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: #2F4858;
-            color: white;
-            padding: 15px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .payment-info {
-            flex: 1;
-        }
-
-        .payment-label {
-            font-size: 14px;
-            opacity: 0.9;
-        }
-
-        .payment-amount {
-            font-size: 20px;
-            font-weight: 500;
-        }
-
-        .payment-period {
-            font-size: 12px;
-            opacity: 0.8;
-        }
-
-        .total-section {
-            text-align: center;
-            margin: 0 40px;
-        }
-
-        .continue-btn,
-        .show-summary-btn {
-            background: #FF5722;
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: 500;
-            font-size: 16px;
-        }
-
-        @media (max-width: 1024px) {
-            .container {
-                flex-direction: column;
-            }
-
-            .image-section {
-                height: 300px;
-            }
-
-            .form-section {
-                padding: 30px 20px;
-            }
         }
     </style>
 </head>
 <body>
-    <a href="home.php">
-        <button class="back-button">  
-            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxsaW5lIHgxPSIxOSIgeTE9IjEyIiB4Mj0iNSIgeTI9IjEyIj48L2xpbmU+PHBvbHlsaW5lIHBvaW50cz0iMTIgMTkgNSAxMiAxMiA1Ij48L3BvbHlsaW5lPjwvc3ZnPg==" alt="Back">
-        </button>
-    </a>
-    <div class="container">
-        <div class="image-section"></div>
-        <div class="form-section">
-            <div class="progress-steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-text">REGISTRATION</div>
-                </div>
-                <div class="step inactive">
-                    <div class="step-number">2</div>
-                    <div class="step-text">PAYMENT</div>
+    <div class="container-fluid p-0">
+        <div class="row g-0">
+            <!-- Left side - Image -->
+            <div class="col-md-5 position-relative">
+                <button class="back-button" onclick="window.location.href='home.php'">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <img src="img/registration_thumbnail.png" alt="Gym workout" class="hero-image w-100">
+            </div>
+            
+            <!-- Right side - Form -->
+            <div class="col-md-7 p-4">
+                <div class="form-container">
+                    <h2 class="mb-4">CREATE YOUR PROFILE</h2>
+                    
+                    <form action="config.php" method="POST">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="First name" name="firstName">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Last name" name="lastName">
+                        </div>
+                        <div class="mb-3">
+                            <div class="position-relative">
+                                <input type="text" 
+                                       class="form-control date-input" 
+                                       placeholder="Date of birth"
+                                       onfocus="(this.type='date')"
+                                       onblur="if(!this.value)this.type='text'"
+                                       name="dateOfBirth">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Email address" name="email">
+                        </div>
+                        <div class="mb-3 input-group">
+                            <span class="input-group-text">+62</span>
+                            <input type="tel" class="form-control" placeholder="Mobile phone number ( eg: 08********* )" name="phoneNumber">
+                        </div>
+
+                        <h2 class="mt-5 mb-4">CUSTOMIZE YOUR PLAN</h2>
+                        
+                        <div class="mb-4">
+                            <div class="plan-header">
+                                <h5 class="m-0">@PRIME FIT</h5>
+                                <h5 class="m-0 price">IDR 130,000.00/Month</h5>
+                            </div>
+                            <small class="text-muted">Full gym fitness access that includes cardio, free weights, functional and lounge areas with usage of various fitness equipment.</small>
+                            <small class="d-block text-muted">*The availability of certain facilities and equipment may vary depending on the club selected.</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <select class="form-select" name="clubChoice">
+                                <option selected disabled>Club of Choice</option>
+                                <option>Cibubur</option>
+                                <option>Margonda</option>
+                                <option>Cibinong</option>
+                                <option>Cileungsi</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <select class="form-select" name="accessLevel">
+                                <option selected disabled>Access Level</option>
+                                <option>Reguler</option>
+                                <option>Upgrade to Prime Fit Plus + IDR 250,000.00/month</option>
+                            </select>
+                        </div>
+
+                        <div class="add-ons">
+                            <h3 class="mb-3">SELECT ADD-ONS</h3>
+                            <div class="mb-2">
+                                <div class="form-check d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <input type="checkbox" class="form-check-input" id="bodyFirst1" name="bodyFirst1">
+                                        <label class="form-check-label" for="bodyFirst1">Body First 1</label>
+                                    </div>
+                                    <span>IDR 100,000.00</span>
+                                </div>
+                            </div>
+                            <div class="mb-2">
+                                <div class="form-check d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <input type="checkbox" class="form-check-input" id="bodyFirst2" name="bodyFirst2" checked>
+                                        <label class="form-check-label" for="bodyFirst2">Body First 2</label>
+                                    </div>
+                                    <span>IDR 150,000.00</span>
+                                </div>
+                            </div>
+                            <div class="mb-2">
+                                <div class="form-check d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <input type="checkbox" class="form-check-input" id="bodyFirst3" name="bodyFirst3">
+                                        <label class="form-check-label" for="bodyFirst3">Body First 3</label>
+                                    </div>
+                                    <span>IDR 200,000.00</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="position-relative">
+                                <input type="text" 
+                                       class="form-control date-input" 
+                                       placeholder="Starting date"
+                                       onfocus="(this.type='date')"
+                                       onblur="if(!this.value)this.type='text'"
+                                       value="2024-10-23"
+                                       name="startingDate">
+                            </div>
+                            <small class="text-muted">*You can cancel your membership during the first 14 days of registration. Terms and conditions apply</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="terms" name="terms">
+                                <label class="form-check-label" for="terms">
+                                    I agree to the Membership Terms and Conditions, Privacy Policy, Club Rules & Terms of Use
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="health" name="health">
+                                <label class="form-check-label" for="health">
+                                    I have read and agree to the Health Statement
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="offers" name="offers">
+                                <label class="form-check-label" for="offers">
+                                    I would like to receive offers from Evolution Wellness Indonesia and its partners
+                                </label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-danger w-100 submit-btn">Submit</button>
+                    </form>
                 </div>
             </div>
-
-            <h1>CREATE YOUR PROFILE</h1>
-            
-            <form action="config.php" method="POST">
-                <input type="text" placeholder="firstName" name="firstName">
-                <input type="text" placeholder="lastName" name="lastName">
-                <input type="date" placeholder="dateOfBirth" name="dateOfBirth">
-                <input type="email" placeholder="email" name="email">
-                
-                <div class="phone-input">
-                    <select>
-                        <option>+62</option>
-                    </select>
-                    <input type="tel" name="phoneNumber" placeholder="Mobile phone number ( eg: 08********** )">
-                </div>
-
-                <div class="plan-section">
-                    <h2>CUSTOMIZE YOUR PLAN</h2>
-                    <div class="plan-header">
-                        <div class="plan-name">@PRIME FIT</div>
-                        <div class="plan-price">IDR 130,000.00/Month</div>
-                    </div>
-                    <p class="plan-description">Full gym floor access that includes cardio, free weights, functional and lounge areas with usage of various fitness equipment.<br>*The availability of certain facilities and equipment may vary depending on the club selected.</p>
-
-                    <select>
-                        <option>Club of Choice</option>
-                    </select>
-                    
-                    <select>
-                        <option>Access Level</option>
-                        <option>Upgrade to Prime Fit Plus +IDR 250,000.00/month</option>
-                    </select>
-
-                    <div class="add-ons">
-                        <h3>SELECT ADD-ONS</h3>
-                        <div class="add-on-item">
-                            <label>
-                                <input type="checkbox"> Body First 1
-                            </label>
-                            <span>IDR 100,000.00</span>
-                        </div>
-                        <div class="add-on-item">
-                            <label>
-                                <input type="checkbox" checked> Body First 2
-                            </label>
-                            <span>IDR 150,000.00</span>
-                        </div>
-                        <div class="add-on-item">
-                            <label>
-                                <input type="checkbox"> Body First 3
-                            </label>
-                            <span>IDR 200,000.00</span>
-                        </div>
-                    </div>
-
-                    <div class="date-section">
-                        <div class="date-field">
-                            <label>Starting date *</label>
-                            <input type="text" value="23 October 2024" readonly>
-                        </div>
-                        <div class="date-field">
-                            <label>Duration</label>
-                            <input type="text" value="12 Month" readonly>
-                        </div>
-                    </div>
-
-                    <div class="checkbox-group">
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="terms" name="termsAccepted">
-                            <label for="terms">I agree to the Membership Terms and Conditions, Privacy Policy, Club Rules & Terms of Use</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="health">
-                            <label for="health">I have read and agree to the Health Statement</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="offers">
-                            <label for="offers">I would like to receive offers from Evolution Wellness Indonesia and its partners</label>
-                        </div>
-                    </div>
-                    
-                    <button type="submit" class="continue-btn">Submit</button>
-                </div>
-            </form>
         </div>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-
-    <div class="payment-summary">
-        <div class="payment-info">
-            <div class="payment-label">Monthly payment</div>
-            <div class="payment-amount">IDR 380,000.00</div>
-            <div class="payment-period">/month</div>
-        </div>
-        <div class="total-section">
-            <div class="payment-label">Total payment</div>
-            <div class="payment-amount">IDR 530,000.00</div>
-        </div>
-        <button class="show-summary-btn">Show summary</button>
-    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

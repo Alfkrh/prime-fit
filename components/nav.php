@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <style>
-      :root {
+        :root {
             --primary-orange: #FF4500;
             --dark-teal: #2C3539;
         }
@@ -18,9 +18,8 @@
 
         .navbar {
             position: sticky;
-            top: 0;
             background-color: var(--primary-orange) !important;
-            padding: 15px 0;
+            padding: 10px 0;
         }
 
         .join-now-btn {
@@ -31,6 +30,21 @@
             border: none;
         }
 
+        /* New styles for centering */
+        .navbar-collapse {
+            justify-content: center;
+        }
+
+        .navbar-nav {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Ensure the button stays on the right */
+        .join-now-btn-container {
+            margin-left: auto;
+        }
     </style>
 </head>
 <body>
@@ -43,7 +57,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto mx-5">
+                <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="home.php">HOME</a>
                     </li>
@@ -60,9 +74,12 @@
                         <a class="nav-link" href="facilities.php">FACILITIES</a>
                     </li>
                 </ul>
-                <button class="join-now-btn">JOIN NOW</button>
+                <div class="join-now-btn-container">
+                    <a href="registration.php"><button class="join-now-btn">JOIN NOW</button></a>
+                </div>
             </div>
         </div>
     </nav>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

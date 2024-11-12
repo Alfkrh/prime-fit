@@ -64,7 +64,8 @@
 <body>
     <?php include "components/nav.php";
     ?>
-
+    <br>
+    <br>
     <!-- Membership Benefits -->
     <section class="container py-5">
         <h1 class="membership-title">Keuntungan <span>Join Membership</span></h1>
@@ -128,7 +129,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <h2><b>Ingin Tahu<br>Keseruan di Prime Fitness?</b></h2>
-                    <button class="btn btn-danger mt-4">Learn more</button>
+                    <a href="learnmore.php"><button class="btn btn-danger mt-4">Learn more</button></a>
                 </div>
                 <div class="col-lg-6">
                     <img src="img/membership.png" alt="Fitness" class="img-fluid rounded">
