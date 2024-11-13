@@ -140,19 +140,19 @@ $formData = $_SESSION['formData'];
                 <div class="row g-3 mb-4">
                     <div class="col-4">
                         <div class="payment-option active text-center">
-                            <img src="/api/placeholder/50/30" alt="Card" class="mb-2">
+                            <img src="img/kartu.png" alt="Card" class="mb-2">
                             <div>Card</div>
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="payment-option text-center">
-                            <img src="/api/placeholder/50/30" alt="Dana" class="mb-2">
+                            <img src="img/dana.png" alt="Dana" class="mb-2">
                             <div>Dana</div>
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="payment-option text-center">
-                            <img src="/api/placeholder/50/30" alt="Bank" class="mb-2">
+                            <img src="img/bank.png" alt="Bank" class="mb-2">
                             <div>Bank</div>
                         </div>
                     </div>

@@ -51,7 +51,7 @@
                     <h5 class="mt-4">Ikuti kami di sosial media</h5>
                     <div class="social-icons">
                         <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="text-white me-3"><i class="bi bi-youtube"></i></a>
+                        <a href="https://www.youtube.com/watch?v=oGi2_MUZ_a4&ab_channel=YaBegitulah" class="text-white me-3"><i class="bi bi-youtube"></i></a>
                         <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
                         <a href="#" class="text-white"><i class="bi bi-linkedin"></i></a>
                     </div>

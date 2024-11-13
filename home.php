@@ -111,7 +111,7 @@
                 <div class="col-lg-6 hero-content">
                     <h1 class="hero-title">Bosan dengan Rutinitas Gym yang Itu-Itu Saja?</h1>
                     <p class="hero-text">Prime Fit hadirkan pengalaman fitness unik dengan suasana menyenangkan, komunitas suportif, dan beragam kelas menarik dan seru!</p>
-                    <button class="gabung-btn">Gabung Sekarang</button>
+                    <a href="registration.php"><button class="gabung-btn">Gabung Sekarang</button></a>
                 </div>
                 <div class="col-lg-6">
                     <img src="img/home1.png" alt="Gym Activities" class="img-fluid rounded">
@@ -142,8 +142,8 @@
                 <div class="col-lg-8">
                     <h2 class="pilates-title">Satu-satunya Gym dengan Fasilitas Pilates Terlengkap dan Terbanyak</h2>
                     <div class="bg-white p-4 rounded shadow-sm">
-                        <p class="mb-3">Mulai dari Rp 1juta-an/bulan, kamu sudah bisa mengikuti kelas Pilates setiap hari. Daftar membership Pilates+ sekarang</p>
-                        <button class="gabung-btn">Gabung sekarang</button>
+                        <p class="mb-3">Mulai dari Rp 130.000-an/bulan, kamu sudah bisa mengikuti kelas Pilates setiap hari. Daftar membership Pilates+ sekarang</p>
+                        <a href="registration.php"><button class="gabung-btn">Gabung sekarang</button></a>
                     </div>
                 </div>
             </div>

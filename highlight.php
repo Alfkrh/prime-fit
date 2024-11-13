@@ -16,7 +16,6 @@
             line-height: 1.6;
         }
         
-        /* Hero Section */
         .hero-section {
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
                         url('img/highlight.jpg');
@@ -45,7 +44,6 @@
             line-height: 1.5;
         }
         
-        /* Strength Section */
         .strength-section {
             padding: 80px 0;
         }
@@ -77,7 +75,6 @@
             border-radius: 8px;
         }
         
-        /* Push Beyond Section */
         .push-beyond {
             background-color: var(--primary-orange);
             padding: 40px;
@@ -98,7 +95,6 @@
             line-height: 1.8;
         }
         
-        /* Pillars Section */
         .pillars-section {
             padding: 80px 0;
             background-color: #36454F;
@@ -146,40 +142,12 @@
             margin: 0;
         }
         
-        /* Footer */
         footer {
             background-color: var(--primary-orange);
             color: white;
             padding: 60px 0 40px;
         }
         
-        .footer-logo {
-            height: 32px;
-            margin-bottom: 24px;
-        }
-        
-        .footer-info {
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 24px;
-        }
-        
-        .footer-title {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-        
-        .footer-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .footer-links li {
-            font-size: 14px;
-            margin-bottom: 12px;
-        }
     </style>
 </head>
 <body>

@@ -36,7 +36,7 @@
         .cta-section {
             background-color: #36454F;
             color: white;
-            padding: 4rem 0;
+            padding: 1.8rem 0;
         }
         
         .faq-section {
@@ -123,16 +123,16 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- Learnmore Section -->
     <section class="cta-section">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <h2><b>Ingin Tahu<br>Keseruan di Prime Fitness?</b></h2>
-                    <a href="learnmore.php"><button class="btn btn-danger mt-4">Learn more</button></a>
+                    <a href="learnmore.php"><button class="btn mt-4" style="background-color: #FF4500; color: white;">Learn more</button></a>
                 </div>
                 <div class="col-lg-6">
-                    <img src="img/membership.png" alt="Fitness" class="img-fluid rounded">
+                    <img src="img/membership.png" alt="Fitness" class="img-fluid rounded" style="width: 600px; max-height: 500px; object-fit: cover;">
                 </div>
             </div>
         </div>

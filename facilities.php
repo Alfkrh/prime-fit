@@ -201,7 +201,6 @@
         </section>
     </div>
 
-    //  Footer
     <?php include "components/footer.php";
     ?>
 

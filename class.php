@@ -35,7 +35,7 @@
         }
 
         .class-section {
-            background-color: var(--dark-teal);
+            background-color: #36454F;
             color: white;
             padding: 50px 0;
         }
@@ -200,12 +200,12 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- Promotion Section -->
     <section class="cta-section">
         <div class="container">
             <h2 class="mb-3"><b>Siap Jadi Versi Terbaik Dirimu?</b></h2>
             <p class="mb-4">Yuk, mulai perjalanan sehatmu bersama Prime Fit dan rasakan perubahannya!</p>
-            <button class="orange-btn">Gabung Sekarang</button>
+            <a href="registration.php"><button class="orange-btn">Gabung Sekarang</button></a>
         </div>
     </section>
 
