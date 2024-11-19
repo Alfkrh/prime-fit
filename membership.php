@@ -171,6 +171,7 @@
         </div>
     </section>
 
+    <!-- footer -->
         <?php include "components/footer.php";
     ?>
 

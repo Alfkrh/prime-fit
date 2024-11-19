@@ -72,55 +72,21 @@
             line-height: 1.6;
         }
 
-        footer {
-            background-color: #ff4500;
-            color: white;
-            padding: 2rem 0;
-        }
-
-        footer img {
-            width: 30px;
-            height: 30px;
-            margin-bottom: 1rem;
-        }
-
-        footer h5 {
-            font-size: 16px;
-            margin-bottom: 1rem;
-        }
-
-        footer ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        footer ul li {
-            margin-bottom: 0.5rem;
-        }
-
-        footer a {
-            color: white;
-            text-decoration: none;
-            font-size: 14px;
-        }
-
-        .contact-info {
-            font-size: 14px;
-            line-height: 1.6;
-        }
     </style>
 </head>
 <body>
+    <!-- navbar -->
     <?php 
         include "components/nav.php";
     ?>
     <br>
     <br>
+    <!-- hero -->
     <div class="hero-section">
         <h1><b>Fasilitas Prime Fit</b></h1>
     </div>
-
+    
+    <!-- facilities contents -->
     <div class="container">
         <div class="facilities-tabs">
             <a href="#weightlifting">Weightlifting and cardio</a>
@@ -201,6 +167,7 @@
         </section>
     </div>
 
+    <!-- footer -->
     <?php include "components/footer.php";
     ?>
 

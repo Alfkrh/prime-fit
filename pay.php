@@ -178,6 +178,7 @@ $formData = $_SESSION['formData'];
                     <script>
                         function Alert() {
                             alert("Payment Success!");
+                            window.location.href = "home.php";
                         }
 </script>
                 </form>

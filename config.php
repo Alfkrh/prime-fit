@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $errors = [];
     
-    // Validation logic here (kept as is in your original code)
+    // Validation logic here
 
     $totalPrice = 130000;
     if ($formData['bodyFirst1']) $totalPrice += 100000;
