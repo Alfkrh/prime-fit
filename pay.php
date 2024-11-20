@@ -71,7 +71,7 @@ $formData = $_SESSION['formData'];
                 
                 <!-- Personal Details Card -->
                 <div class="card p-4 mb-4">
-                    <h5 class="mb-3">REVIEW AND PAY</h5>
+                    <h5 class="mb-3">PERSONAL DETAILS</h5>
                     <div class="detail-row">
                         <span>First name</span>
                         <span><?php echo htmlspecialchars($formData['firstName']); ?></span>
@@ -124,6 +124,29 @@ $formData = $_SESSION['formData'];
                         <span>IDR 250,000.00/month</span>
                     </div>
                     <?php endif; ?>
+
+                    <!-- Add Body First Details -->
+                    <?php if ($formData['bodyFirst1']): ?>
+                    <div class="detail-row">
+                        <span>Body First 1</span>
+                        <span>IDR 100,000.00/month</span>
+                    </div>
+                    <?php endif; ?>
+                    
+                    <?php if ($formData['bodyFirst2']): ?>
+                    <div class="detail-row">
+                        <span>Body First 2</span>
+                        <span>IDR 150,000.00/month</span>
+                    </div>
+                    <?php endif; ?>
+                    
+                    <?php if ($formData['bodyFirst3']): ?>
+                    <div class="detail-row">
+                        <span>Body First 3</span>
+                        <span>IDR 200,000.00/month</span>
+                    </div>
+                    <?php endif; ?>
+                    
                     <div class="detail-row">
                         <span>12 month</span>
                         <span>IDR 0.00/month</span>
@@ -132,7 +155,6 @@ $formData = $_SESSION['formData'];
                         <strong>Total monthly payment</strong>
                         <strong>IDR <?php echo number_format($formData['totalPrice'], 2); ?>/month</strong>
                     </div>
-
                 </div>
 
                 <!-- Payment Options -->
@@ -174,13 +196,13 @@ $formData = $_SESSION['formData'];
                             <input type="text" class="form-control" placeholder="CVC" required>
                         </div>
                     </div>
-                    <button type="submit" class="pay-button w-100" onclick=Alert()>PAY</button>
+                    <button type="submit" class="pay-button w-100" onclick="Alert()">PAY</button>
                     <script>
                         function Alert() {
                             alert("Payment Success!");
                             window.location.href = "home.php";
                         }
-</script>
+                    </script>
                 </form>
             </div>
         </div>
@@ -199,4 +221,4 @@ $formData = $_SESSION['formData'];
         });
     </script>
 </body>
-</html> 
+</html>

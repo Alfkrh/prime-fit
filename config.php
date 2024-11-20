@@ -29,7 +29,50 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $errors = [];
     
-    // Validation logic here
+    // Validation logic
+    if (empty($formData['firstName'])) {
+        $errors[] = "First name is required";
+    }
+    
+    if (empty($formData['lastName'])) {
+        $errors[] = "Last name is required";
+    }
+    
+    if (empty($formData['dateOfBirth'])) {
+        $errors[] = "Date of birth is required";
+    }
+    
+    if (empty($formData['email'])) {
+        $errors[] = "Email is required";
+    } elseif (!filter_var($formData['email'], FILTER_VALIDATE_EMAIL)) {
+        $errors[] = "Invalid email format";
+    }
+    
+    if (empty($formData['phoneNumber'])) {
+        $errors[] = "Phone number is required";
+    } elseif (!preg_match("/^[0-9]{10,12}$/", $formData['phoneNumber'])) {
+        $errors[] = "Invalid phone number format";
+    }
+    
+    if (empty($formData['clubChoice']) || $formData['clubChoice'] === 'Club of Choice') {
+        $errors[] = "Please select a club";
+    }
+    
+    if (empty($formData['accessLevel']) || $formData['accessLevel'] === 'Access Level') {
+        $errors[] = "Please select an access level";
+    }
+    
+    if (empty($formData['startingDate'])) {
+        $errors[] = "Starting date is required";
+    }
+    
+    if (!$formData['termsAccepted']) {
+        $errors[] = "You must accept the Terms and Conditions";
+    }
+    
+    if (!$formData['healthAccepted']) {
+        $errors[] = "You must accept the Health Statement";
+    }
 
     $totalPrice = 130000;
     if ($formData['bodyFirst1']) $totalPrice += 100000;
